@@ -6,7 +6,8 @@ class ProductController {
 			const products = await Products.find({});
 			res.json(products);
 		} catch (error) {
-			res.json({ error });
+			throw new Error('Error Getting Products');
+			res.status(404).send({ error });
 		}
 	};
 

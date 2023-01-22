@@ -7,6 +7,7 @@ require('dotenv').config();
 const db = require('./db/index');
 
 const productRouter = require('./routes/productRoutes');
+const userRouter = require('./routes/userRoutes');
 
 const app = express();
 app.use(cors());
@@ -18,6 +19,7 @@ app.get('/', (req, res) => {
 });
 
 app.use('/products/', productRouter);
+app.use('/user/', userRouter);
 
 const PORT = process.env.PORT || 5000;
 
